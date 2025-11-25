@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pixora - Instagram Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login overlay -->
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-card">
+      <div class="login-logo">
+        <div class="login-logo-inner">Px</div>
+      </div>
+      <h1>Welcome to Pixora</h1>
+      <p>Share your favorite moments with a clean, minimal Instagram-style feed.</p>
+      <div class="input-group">
+        <label for="loginUsername">Choose a username</label>
+        <input type="text" id="loginUsername" placeholder="e.g. gowtham_07" />
+      </div>
+      <button class="btn btn-primary" id="loginBtn">Enter Pixora</button>
+      <div class="login-footer">
+        Your session is stored locally in your <span>browser</span>.
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-title">
+      <span class="logo-dot"></span>
+      Pixora
+    </div>
+    <div class="navbar-right">
+      <div class="username-display" id="navbarUsername">@guest</div>
+      <button class="btn small-btn" id="logoutBtn" title="Clear session">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Main layout -->
+  <div class="container">
+    <!-- Sidebar / profile -->
+    <aside class="sidebar">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-avatar" id="profileAvatar">P</div>
+          <div>
+            <div class="profile-name" id="profileDisplayName">Pixora User</div>
+            <div class="profile-username" id="profileUsername">@guest</div>
+          </div>
+        </div>
+        <div class="profile-bio" id="profileBio">
+          Capturing tiny moments and turning them into timeless pixels.
+        </div>
+        <div class="profile-stats">
+          <div>
+            <span id="profilePostCount">0</span>
+            Posts
+          </div>
+          <div>
+            <span>∞</span>
+            Reach
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main column -->
+    <main class="main-column">
+      <!-- New Post Card -->
+      <section class="card">
+        <h2>Create new post</h2>
+        <p class="card-subtitle">Use an image URL and caption to share a moment.</p>
+        <form id="newPostForm">
+          <div class="input-group">
+            <label for="imageUrl">Image URL</label>
+            <input type="url" id="imageUrl" placeholder="https://images.unsplash.com/..." required />
+          </div>
+          <div class="input-group">
+            <label for="caption">Caption</label>
+            <textarea id="caption" placeholder="Write a short caption..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Post to feed</button>
+        </form>
+      </section>
+
+      <!-- Feed card -->
+      <section class="card">
+        <div class="feed-toolbar">
+          <div class="filter-group">
+            <button class="chip chip-active" data-filter="all" id="filterAll">All posts</button>
+            <button class="chip" data-filter="mine" id="filterMine">My posts</button>
+          </div>
+          <input type="search" id="searchInput" placeholder="Search captions..." />
+        </div>
+        <div id="feed"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer>Built with ♥ for learning and fun – Pixora</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
